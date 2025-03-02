@@ -25,7 +25,7 @@ public class ObjectModel {
             int totalPlayers = 0;
 
             for (SportsTeam team : teams) {
-                // ALT SOL numTeams++;
+                // ALT SOL: numTeams++;
                 totalPlayers += team.players();
             }
 
