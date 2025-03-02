@@ -21,7 +21,6 @@ public class ObjectModel {
     public record Competition(ArrayList<SportsTeam> teams) {
         public void startCompetition() {
             // ALT SOL: int numTeams = 0;
-            int numTeams = teams.size();
             int totalPlayers = 0;
 
             for (SportsTeam team : teams) {
@@ -29,7 +28,7 @@ public class ObjectModel {
                 totalPlayers += team.players();
             }
 
-            System.out.println(totalPlayers + " players from " + numTeams + " teams are competing in today's competition.");
+            System.out.println(totalPlayers + " players from " + teams.size() + " teams are competing in today's competition.");
         }
     }
 }
