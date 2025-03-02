@@ -2,37 +2,20 @@ import java.util.ArrayList;
 
 public class Tester {
     public static void main(String[] args) {
-        ArrayList<String> players = new ArrayList<>();
-        players.add("Dan");
-        players.add("Dylan");
-        players.add("Jason");
-        players.add("Kaitlin");
-        Billiards b = new Billiards(players, "8-Ball");
+        ObjectModel.Football football1 = new ObjectModel.Football("USA", 46);
+        ObjectModel.Tennis tennis1 = new ObjectModel.Tennis("England", true, 8);
+        ObjectModel.Tennis tennis2 = new ObjectModel.Tennis("China", false, 4);
 
-        ArrayList<String> players2 = new ArrayList<>();
-        players2.add("Venus");
-        players2.add("Serena");
-        Tennis t = new Tennis(players2);
+        ArrayList<ObjectModel.SportsTeam> teams = new ArrayList<>();
+        teams.add(football1);
+        teams.add(tennis1);
+        teams.add(tennis2);
 
-        System.out.println(b.getNumBalls());
-        System.out.println(b.toString());
-        System.out.println();
-        System.out.println(t.toString());
+        ObjectModel.Competition competition = new ObjectModel.Competition(teams);
 
-        ArrayList<Sport> sports = new ArrayList<>();
-        sports.add(b);
-        sports.add(t);
-
-        System.out.println("Total players: " + countTotalPlayers(sports));
-    }
-
-    public static int countTotalPlayers(ArrayList<Sport> sports) {
-        int total = 0;
-
-        for (Sport s : sports) {
-            total += s.players().size();
-        }
-
-        return total;
+        System.out.println(football1.toString());
+        System.out.println(tennis1.toString());
+        System.out.println(tennis2.toString());
+        competition.startCompetition();
     }
 }
