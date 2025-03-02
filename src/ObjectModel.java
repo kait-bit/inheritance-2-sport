@@ -20,11 +20,12 @@ public class ObjectModel {
 
     public record Competition(ArrayList<SportsTeam> teams) {
         public void startCompetition() {
-            int numTeams = 0;
+            // ALT SOL: int numTeams = 0;
+            int numTeams = teams.size();
             int totalPlayers = 0;
 
             for (SportsTeam team : teams) {
-                numTeams++;
+                // ALT SOL numTeams++;
                 totalPlayers += team.players();
             }
 
